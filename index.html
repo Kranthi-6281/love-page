@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+        color: white;
+        text-align: center;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        padding: 30px;
+    }
+
+    .heart {
+        font-size: 90px;
+        animation: heartbeat 1.2s infinite;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin: 15px 0;
+        text-shadow: 0 4px 15px rgba(0,0,0,.25);
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 1.6;
+    }
+
+    .forever {
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .floating-heart {
+        position: absolute;
+        bottom: -50px;
+        font-size: 25px;
+        animation: float 8s linear infinite;
+        opacity: .8;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.25); }
+    }
+
+    @keyframes float {
+        from {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .love-button {
+        margin-top: 25px;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 30px;
+        background: white;
+        color: #ff4f81;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 5px 20px rgba(0,0,0,.2);
+    }
+
+    .love-button:hover {
+        transform: scale(1.08);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="heart">❤️</div>
+
+    <h1>I Love You Forever</h1>
+
+    <p>
+        No matter where life takes us,<br>
+        my heart will always choose you. ❤️
+    </p>
+
+    <div class="forever">
+        You & Me — Forever & Always 💕
+    </div>
+
+    <button class="love-button" onclick="showLove()">
+        Click Me ❤️
+    </button>
+</div>
+
+<script>
+function showLove() {
+    alert("I LOVE YOU FOREVER ❤️🥰\nYou are my favorite person in this world.");
+}
+
+// Create floating hearts
+const hearts = ["❤️", "💕", "💖", "💗", "💘"];
+
+for (let i = 0; i < 25; i++) {
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+    heart.style.animationDelay = Math.random() * 5 + "s";
+
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
+
